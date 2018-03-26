@@ -1,0 +1,152 @@
+div.business-desc {
+    height: 259px;
+    background: url(../../img/app/business-desc-bg.png) center no-repeat;
+    /*bfc: 块级格式上下文，解决子div设置margin后父div受影响的问题*。设置overflow属性与border属性均可出发bfc*/
+    overflow: hidden;
+}
+
+div.ad1 {
+    margin: 55px auto 11px auto;
+    text-align: center;
+}
+
+div.ad1 span {
+    height: 35px;
+    font-size: 39px;
+    font-family: FZZZHONGJW--GB1-0;
+    color: rgba(255, 255, 255, 1);
+    line-height: 44px;
+}
+
+div.ad2 {
+    text-align: center;
+    margin: 0 auto 44px auto;
+}
+
+div.ad2 span {
+    font-size: 39px;
+    font-family: FZZZHONGJW--GB1-0;
+    color: rgba(255, 255, 255, 1);
+    line-height: 44px;
+}
+
+div.business-icon-wrapper img.one-minute-check {
+    width: 62px;
+    height: 47px;
+    margin: 0 55px 0 30px;
+}
+
+div.business-icon-wrapper img.high-acceptment {
+    width: 69px;
+    height: 47px;
+    margin: 0 38px 0 0;
+}
+
+div.business-icon-wrapper img.three-minutes-income {
+    width: 92px;
+    height: 45px;
+}
+
+div.msg-tip {
+    text-align: center;
+}
+
+div.credit-ceil-tip {
+    margin: 25px 0 0 0;
+}
+
+div.credit-ceil-tip span {
+    color: #3E3E40;
+    font-size: 14px;
+}
+
+div.credit-ceil-number {
+    margin: 15px 0 0 0;
+}
+
+div.credit-ceil-number span {
+    color: #111111;
+    font-size: 49px;
+}
+
+div.ad-info {
+    margin: 14px 0 0 0;
+}
+
+div.ad-info span {
+    color: #3E3E3E;
+    font-size: 14px;
+}
+
+div.cellphone-wrapper {
+    margin: 24px 0 0 0;
+    text-align: center;
+}
+
+div.cellphone-wrapper input {
+    width: 292px;
+    height: 43px;
+    border-radius: 10px;
+    border: 1px solid rgba(171, 171, 171, 1);
+    padding: 0 0 0 17px;
+}
+
+div.sms-code-wrapper {
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+div.sms-code-wrapper input {
+    width: 170px;
+    height: 43px;
+    border-radius: 10px;
+    border: 1px solid rgba(171, 171, 171, 1);
+    padding: 0 0 0 17px;
+}
+
+div.sms-code-wrapper button {
+    width: 117px;
+    height: 43px;
+    background: rgba(67, 157, 248, 1);
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: PingFangSC-Medium;
+    color: rgba(255, 255, 255, 1);
+    line-height: 0px;
+    border: none;
+}
+
+div.submit-wrapper {
+    margin: 25px 0 0 0;
+    text-align: center;
+}
+
+div.submit-wrapper button {
+    width: 309px;
+    height: 44px;
+    background: rgba(67, 157, 248, 1);
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: PingFang-SC-Medium;
+    color: rgba(255, 255, 255, 1);
+    line-height: 0px;
+    border: none;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 16px;
+    font-family: PingFang-SC-Medium;
+    color: rgba(204, 204, 204, 1);
+}
+
+input::-moz-placeholder {
+    font-size: 16px;
+    font-family: PingFang-SC-Medium;
+    color: rgba(204, 204, 204, 1);
+}
+
+input:-ms-input-placeholder {
+    font-size: 16px;
+    font-family: PingFang-SC-Medium;
+    color: rgba(204, 204, 204, 1);
+}

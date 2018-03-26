@@ -1,0 +1,344 @@
+.container{
+	margin: 10px 20px 10px 20px;
+}
+
+h1{
+	font-size: 20px;
+}
+
+.section{
+	position:relative;
+	width:100%;
+	border-style: solid none none none;
+	border-width: thin;
+	padding: 20px;
+}
+
+.sec-title{
+	color: blue;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 500;
+	/*padding: 20px;*/
+}
+
+#select-country{
+	width: 90px;
+	border-radius: 3px;
+	margin-left: 20px;
+}
+
+/*#countrys{*/
+	/*display: inline-block;*/
+	/*margin-left: 10px;*/
+/*}*/
+
+input{
+    margin-left: 15px;
+    margin-right: 5px;
+    line-height: 25px;
+    width: 50px;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+#select-count{
+	margin-top: 15px;
+}
+
+#select-target{
+	margin-top: 10px;
+}
+
+.sub-target{
+	margin-top: 10px;
+}
+
+#cate-table, #tag-table, #show-ratio-table{
+	display: inline-block;
+	width: 700px;
+	margin-left: 30px;
+	border-style: solid;
+	border-width: thin;
+    border-color: darkgray;
+}
+
+.cate,.tag{
+	float: left;
+	margin: 10px;
+	text-align: center;
+}
+
+#btn-cate, #btn-tag, #btn-show, #btn-clothes, #btn-shoes {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    background-color: #06F;
+    font-size: 15px;
+    font-weight: 300;
+    border: none;
+    color: white;
+    line-height: 25px;
+    border-radius: 4px;
+    width: 30%;
+}
+
+#cate-label{
+	color: darkgray;
+    position: relative;
+    bottom: 120px;
+}
+
+#tag-label{
+	color: darkgray;
+    position: relative;
+    bottom: 70px;
+}
+
+#week-sale-and-discount, #listing-num-and-click-rate, #price{
+	margin: 30px 0px 30px 0px
+}
+
+#week-sale, #discount, #listing-num, #click-rate, #price{
+	padding: 30px 0px 0px 0px;
+	width: 30%;
+}
+
+#week-sale-table, #discount-table, #listing-num-table, #click-rate-table, #price-table{
+	width: 85%;
+}
+
+#week-sale-label, #discount-label, #listing-num-label, #click-rate-label, #price-label{
+	width: 30%;
+}
+
+#week-sale-value-old, #discount-value-old, #listing-num-value-old, #click-rate-value-old, #price-value-old{
+	width: 30%;
+}
+
+#week-sale-value-new, #discount-value-new, #listing-num-value-new, #click-rate-value-new, #price-value-new{
+	width: 40%;
+}
+
+.gray{
+	color: darkgray;
+}
+
+#count-input{
+	margin-left: 35px;
+}
+
+#show-count, #show-ratio{
+	margin-top: 20px;
+}
+
+/*#products{
+	display: inline-block;
+}*/
+
+#clothes, #shoes{
+	display: inline-block;
+	padding-right: 60px;
+}
+
+#clothes-detail, #shoes-detail{
+	display: inline-block;
+	margin-left: 30px;
+	margin-top: 20px;
+	border-style: solid;
+	border-width: thin;
+    border-color: darkgray;
+}
+
+#clothes-detail td, #shoes-detail td{
+	text-align: center;
+	width: 20%;
+	padding: 5px;
+}
+
+#clothes-detail-table, #shoes-detail-table{
+	margin-top: 15px;
+	margin-right: 20px;
+}
+
+#clothes-label, #shoes-label{
+	position: relative;
+    bottom: 140px;
+}
+
+#show-ratio-label{
+	position: relative;
+    bottom: 60px;
+}
+
+#btn-test, #btn-deploy{    
+    display: inline-block;
+    margin: 0 auto;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #06F;
+    font-size: 15px;
+    font-weight: 300;
+    border: none;
+    color: white;
+    line-height: 25px;
+    border-radius: 4px;
+    width: 15%;
+}
+
+#test-label, #deploy-label{
+	position: relative;
+    top: 8px;
+}
+
+input[name="test-url"] {
+	width: 50%;
+}
+
+.bold-stick{
+	color: royalblue;
+    font-weight: 900;
+}
+
+#btn-cate{
+	animation:shake 0.1s;
+	animation-iteration-count:infinite;
+}
+
+#redpacket{
+	animation:shake 0.1s;
+	animation-iteration-count:infinite;
+	transform-origin: center 70%
+}
+
+@keyframes shake
+{
+	0%   {
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg); /* IE 9 */
+		-moz-transform:rotate(0deg); /* Firefox */
+		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+		-o-transform:rotate(0deg); /* Opera */
+	}
+	25%  {
+		transform:rotate(7deg);
+		-ms-transform:rotate(7deg); /* IE 9 */
+		-moz-transform:rotate(7deg); /* Firefox */
+		-webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+		-o-transform:rotate(7deg); /* Opera */
+	}
+	75%  {
+		transform:rotate(-7deg);
+		-ms-transform:rotate(-7deg); /* IE 9 */
+		-moz-transform:rotate(-7deg); /* Firefox */
+		-webkit-transform:rotate(-7deg); /* Safari 和 Chrome */
+		-o-transform:rotate(-7deg); /* Opera */
+	}
+	100% {
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg); /* IE 9 */
+		-moz-transform:rotate(0deg); /* Firefox */
+		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+		-o-transform:rotate(0deg); /* Opera */
+	}
+}
+
+@-moz-keyframes shake /* Firefox */
+{
+	0%   {
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg); /* IE 9 */
+		-moz-transform:rotate(0deg); /* Firefox */
+		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+		-o-transform:rotate(0deg); /* Opera */
+	}
+	25%  {
+		transform:rotate(7deg);
+		-ms-transform:rotate(7deg); /* IE 9 */
+		-moz-transform:rotate(7deg); /* Firefox */
+		-webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+		-o-transform:rotate(7deg); /* Opera */
+	}
+	75%  {
+		transform:rotate(-7deg);
+		-ms-transform:rotate(-7deg); /* IE 9 */
+		-moz-transform:rotate(-7deg); /* Firefox */
+		-webkit-transform:rotate(-7deg); /* Safari 和 Chrome */
+		-o-transform:rotate(-7deg); /* Opera */
+	}
+	100% {
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg); /* IE 9 */
+		-moz-transform:rotate(0deg); /* Firefox */
+		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+		-o-transform:rotate(0deg); /* Opera */
+	}
+}
+
+@-webkit-keyframes shake /* Safari 和 Chrome */
+{
+	0%   {
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg); /* IE 9 */
+		-moz-transform:rotate(0deg); /* Firefox */
+		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+		-o-transform:rotate(0deg); /* Opera */
+	}
+	25%  {
+		transform:rotate(7deg);
+		-ms-transform:rotate(7deg); /* IE 9 */
+		-moz-transform:rotate(7deg); /* Firefox */
+		-webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+		-o-transform:rotate(7deg); /* Opera */
+	}
+	75%  {
+		transform:rotate(-7deg);
+		-ms-transform:rotate(-7deg); /* IE 9 */
+		-moz-transform:rotate(-7deg); /* Firefox */
+		-webkit-transform:rotate(-7deg); /* Safari 和 Chrome */
+		-o-transform:rotate(-7deg); /* Opera */
+	}
+	100% {
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg); /* IE 9 */
+		-moz-transform:rotate(0deg); /* Firefox */
+		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+		-o-transform:rotate(0deg); /* Opera */
+	}
+}
+
+@-o-keyframes shake /* Opera */
+{
+	0%   {
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg); /* IE 9 */
+		-moz-transform:rotate(0deg); /* Firefox */
+		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+		-o-transform:rotate(0deg); /* Opera */
+	}
+	25%  {
+		transform:rotate(7deg);
+		-ms-transform:rotate(7deg); /* IE 9 */
+		-moz-transform:rotate(7deg); /* Firefox */
+		-webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+		-o-transform:rotate(7deg); /* Opera */
+	}
+	75%  {
+		transform:rotate(-7deg);
+		-ms-transform:rotate(-7deg); /* IE 9 */
+		-moz-transform:rotate(-7deg); /* Firefox */
+		-webkit-transform:rotate(-7deg); /* Safari 和 Chrome */
+		-o-transform:rotate(-7deg); /* Opera */
+	}
+	100% {
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg); /* IE 9 */
+		-moz-transform:rotate(0deg); /* Firefox */
+		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+		-o-transform:rotate(0deg); /* Opera */
+	}
+}

@@ -1,0 +1,31 @@
+button.intab {
+    border: none;
+}
+
+.field-row {
+    margin: 0 0 20px 0;
+}
+
+.field-row label {
+    display: inline-block;
+    margin: 0;
+    width: 460px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.field {
+    margin: 0 0 0 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.field input {
+    margin: 0;
+    border: none;
+}
+
+#thumb {
+    width: 100px;
+    height: 100px;
+}

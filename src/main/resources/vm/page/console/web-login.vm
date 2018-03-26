@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    #parse("gv_config.vm")
+<head>
+    <title>登录简速贷运营后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="/css/console/web-login.css?css_version=${css_version}" rel="stylesheet" media="screen">
+</head>
+<body class="login-bg">
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1><a href="#"></a></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-content container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-wrapper">
+                <div class="box">
+                    <div class="content-wrap">
+                        <h6>登录简速贷运营后台</h6>
+                        <input class="form-control account" type="text" placeholder="Your account">
+                        <input class="form-control password" type="password" placeholder="Your password">
+                        <input type="hidden" class="redirect-url" value="${redirectUrl}">
+                        <input type="hidden" class="role-auth" value="${roleAuth}">
+                        <div class="action">
+                            <button class="btn btn-primary signin" data-url="/login">登录</button>
+                            <a class="go-to-register" href="/register_page">新用户注册</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/lib/jquery.min.js?js_version=${js_version}"></script>
+<script src="/js/console/web-login.js?js_version=${js_version}"></script>
+</body>
+</html>

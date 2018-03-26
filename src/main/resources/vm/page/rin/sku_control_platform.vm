@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数据选品调控</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+    <link href="/css/sku_control_platform.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>数据选品调控平台</h1>
+
+      <div id="crowd-select" class="section">
+        <span class="sec-title">面向人群</span>
+        <!--
+        <div id="countrys" class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+            美国
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+          </ul>
+        </div>
+        -->
+          <select id="select-country">
+              <option value="美国" selected>美国</option>
+              <option value="中国">中国</option>
+              <option value="日本">日本</option>
+          </select>
+      </div>
+      
+      <div id="select-rules" class="section">
+        <span class="sec-title">选品规则</span>
+        <div id="select-count">
+          <span class="bold-stick">| </span>选品数量
+          <input type="text" name="count">件商品
+        </div>
+        <div id="select-target">
+          <span class="bold-stick">| </span>选品指标
+          <!-- 品类 -->
+          <div id="cate" class="sub-target">
+            <span id="cate-label">| 品类</span>
+            <div id="cate-table">
+            <div class="clearfix">
+              <div class="cate">
+                <span>Clothing</span>
+                <input type="text" name="Clothing">%
+              </div>
+              <div class="cate">
+                <span>Jewelry</span>
+                <input type="text" name="Jewelry">%
+              </div>
+              <div class="cate">
+                <span>Home</span>
+                <input type="text" name="Home">%
+              </div>
+              <div class="cate">
+                <span>Bags</span>
+                <input type="text" name="Bags">%
+              </div>
+              <div class="cate">
+                <span>Shoes</span>
+                <input type="text" name="Shoes">%
+              </div>
+              <div class="cate">
+                <span>Beauty</span>
+                <input type="text" name="Beauty">%
+              </div>
+              <div class="cate">
+                <span>Gadgets</span>
+                <input type="text" name="Gadgets">%
+              </div>
+            </div>
+            <button id="btn-cate" class="btn">自动匹配百分比</button>
+            </div>
+          </div>
+          <!-- TAG -->
+          <div id="tag" class="sub-target">
+            <span id="tag-label">| TAG</span>
+            <div id="tag-table">
+              <div class="clearfix">
+                <div class="tag">
+                  <span>春秋装</span>
+                  <input type="text" name="Spring-Autumn-Clothes">%
+                </div>
+                <div class="tag">
+                  <span>夏装</span>
+                  <input type="text" name="Summer-Clothes">%
+                </div>
+                <div class="tag">
+                  <span>冬装</span>
+                  <input type="text" name="Winter-Clothes">%
+                </div>
+              </div>
+              <button id="btn-tag" class="btn">自动匹配百分比</button>
+            </div>
+          </div>
+          <table>
+            <tr>
+              <td id="week-sale">
+                <!-- 周销量 -->
+                <table id="week-sale-table">
+                  <tr>
+                    <td id="week-sale-label"><span class="gray">| 周销量</span></td>
+                    <td id="week-sale-value-old"><span>原数值 2.3</span></td>
+                    <td id="week-sale-value-new"><span >更改为 <input type="text" name="week-sale-modify"></span></td>
+                  </tr>
+                </table>
+              </td> 
+              <td id="discount">
+                <!-- 折扣 -->
+                <table id="discount-table">
+                  <tr>
+                    <td id="discount-label"><span class="gray">| 折扣</span></td>
+                    <td id="discount-value-old"><span>原数值 1.3</span></td>
+                    <td id="discount-value-new"><span>更改为 <input type="text" name="week-sale-modify"></span></td>
+                  </tr>
+                </table>
+              </td>
+            <tr>
+              <td id="listing-num">
+                <!-- listing数 -->
+                <table id="listing-num-table">
+                  <tr>
+                    <td id="listing-num-label"><span class="gray">| listing数</span></td>
+                    <td id="listing-num-value-old"><span>原数值 1.3</span></td>
+                    <td id="listing-num-value-new"><span>更改为 <input type="text" name="week-sale-modify"></span></td>
+                  </tr>
+                </table>
+              </td>
+              <td id="click-rate">
+                <!-- 点击率 -->
+                <table id="click-rate-table">
+                  <tr>
+                    <td id="click-rate-label"><span class="gray">| 点击率</span></td>
+                    <td id="click-rate-value-old"><span>原数值 1.3</span></td>
+                    <td id="click-rate-value-new"><span>更改为 <input type="text" name="week-sale-modify"></span></td>
+                  </tr>
+                </table>
+              </td>
+            <tr>
+              <td id="price">
+                <table id="price-table">
+                  <tr>
+                    <td id="price-label"><span class="gray">| 价格</span></td>
+                    <td id="price-value-old"><span>原数值 -1.3</span></td>
+                    <td id="price-value-new"><span>更改为 <input type="text" name="week-sale-modify"></span></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 展示规则 -->
+      <div id="show-rules" class="section">
+        <span class="sec-title">展示规则</span>
+        <div id="show-count">
+          <span class="bold-stick">|</span> 展示数量
+          <span id="count-input">前<input type="text" name="count">件商品</span>
+        </div>
+        <div id="show-ratio">
+          <span id="show-ratio-label"><span class="bold-stick">| </span>展示比例</span>
+            <div id="show-ratio-table">
+              <div class="clearfix">
+                <div class="tag">
+                  <span>筛选品</span>
+                  <input type="text" name="selected">%
+                </div>
+                <div class="tag">
+                  <span>其他</span>
+                  <input type="text" name="other">%
+                </div>
+              </div>
+              <button id="btn-show" class="btn">自动匹配百分比</button>
+            </div>
+        </div>
+      </div>
+      
+      <!-- 商品换季 -->
+      <div id="season-products" class="section">
+        <span class="sec-title">商品换季</span>
+        <div id="products">
+          <div id="clothes">
+            <span id="clothes-label"><span class="bold-stick">| </span>衣服</span>
+            <div id="clothes-detail">
+              <table id="clothes-detail-table">
+                <tr>
+                  <td></td>
+                  <td>全部</td>
+                  <td>春秋</td>
+                  <td>冬</td>
+                  <td>夏</td>
+                </tr>
+                <tr>
+                  <td>现有</td>
+                  <td id="current-all-clothes">5000</td>
+                  <td id="current-spring-autumn-clothes">600</td>
+                  <td id="current-winter-clothes">200</td>
+                  <td id="current-summer-clothes">4200</td>
+                </tr>
+                <tr>
+                  <td>前置</td>
+                  <td id="set-all-clothes"><input type="text" value="0" disabled="disabled"></td>
+                  <td id="set-spring-autumn-clothes"><input type="text"></td>
+                  <td id="set-winter-clothes"><input type="text"></td>
+                  <td id="set-summer-clothes"><input type="text"></td>
+                </tr>
+              </table>
+              <button id="btn-clothes" class="btn">自动匹配</button>
+            </div>
+          </div>
+          <div id="shoes">
+            <span id="shoes-label"><span class="bold-stick">| </span>鞋</span>
+            <div id="shoes-detail">
+              <table id="shoes-detail-table">
+                <tr>
+                  <td></td>
+                  <td>全部</td>
+                  <td>春秋</td>
+                  <td>冬</td>
+                  <td>夏</td>
+                </tr>
+                <tr>
+                  <td>现有</td>
+                  <td id="current-all-shoes">1000</td>
+                  <td id="current-spring-autumn-shoes">300</td>
+                  <td id="current-winter-shoes">200</td>
+                  <td id="current-summer-shoes">500</td>
+                </tr>
+                <tr>
+                  <td>前置</td>
+                  <td id="set-all-shoes"><input type="text" value="0" disabled="disabled"></td>
+                  <td id="set-spring-autumn-shoes"><input type="text"></td>
+                  <td id="set-winter-shoes"><input type="text"></td>
+                  <td id="set-summer-shoes"><input type="text"></td>
+                </tr>
+              </table>
+              <button id="btn-shoes" class="btn">自动匹配</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 测试与发布 -->
+      <div id="test-deploy" class="section">
+        <span class="sec-title">测试与发布</span>
+        <div id="test">
+          <span id="test-label"><span class="bold-stick">| </span>测试</span>
+          <div id="test-block">
+            <button id="btn-test" class="btn">生成测试链接</button>
+            <input type="text" name="test-url">
+          </div>
+        </div>
+        <div id="deploy">
+          <span id="deploy-label"><span class="bold-stick">| </span>发布</span>
+          <div id="deploy-block">
+            <button id="btn-deploy" class="btn">确认发布</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+        <img id="redpacket" src="/img/redpacket.png">
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/common/bootstrap.min.js"></script>
+    <script src="/js/sku_control_platform.js"></script>
+  </body>
+</html>

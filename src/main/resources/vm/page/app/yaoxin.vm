@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	  <meta name="apple-mobile-web-app-capable" content="yes" />
+	  <meta name="format-detection" content="telephone=no" />
+		<!--强制清除缓存-->
+	  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<title>邀新活动 - 简速贷</title>
+
+		<script>
+		  window.onresize = function(){
+		    getscreen();
+		  }
+		  function getscreen(){
+		    var screenWidth = document.documentElement.clientWidth;
+		    if(screenWidth>450){
+		      screenWidth=450
+		    }
+		    document.documentElement.style.fontSize = (100/750) * screenWidth + 'px';
+		  }
+		  getscreen();
+		</script>
+
+		<style type="text/css">
+			*{margin:0;padding: 0;}
+			html{margin:0;height:100%;}
+			body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+			body { height: 100%;background:#fff; color:#555; font-size:14px; font-family: Verdana, Arial, Helvetica, sans-serif; -webkit-text-size-adjust: 100%!important;}
+			td,th,caption { font-size:14px; }
+			h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+			address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+			a { color:#555; text-decoration:none; }
+			a:hover { text-decoration:underline; }
+			img { border:none; }
+			ol,ul,li { list-style:none; }
+			input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+			table { border-collapse:collapse; }
+			html {overflow-y: scroll;}
+			/* css common */
+			.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+			.clearfix { *zoom:1; }
+			*{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+			select{appearance:none;-moz-appearance:none;-webkit-appearance:none;border:none;outline: none;background:transparent;}
+			input{outline: none;border:none;background:#fff;margin:0;padding: 0;}
+			a, button, input, textarea {
+			    outline: none;
+			}
+			select, input, a {
+			    -webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+
+			.tip{position: absolute;bottom:100px;text-align: center;width:100%;display: none;}
+			.tip span{display:inline-block;line-height:24px;padding:0 10px;background:#999;color:#fff;border-radius: 5px;border:1px solid #eee;}
+
+			.g_pop{width:100%;height:100%;position:fixed;top:0;left:0;display: none;z-index: 5555;}
+			.pop_cover{width:100%;height:100%;position:absolute;top:0;left:0;background: rgba(0,0,0,0.30);}
+			.g_pop1 .g_pop_content{overflow:hidden;font-size:13px;padding-bottom:0.7rem;border-radius:5px;width:5.3rem;height:1.96rem;background:#fff;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;}
+			.g_pop1 .g_pop_bottom{font-size:14px ;font-weight:normal;border-top:1px solid #969ea6;position:absolute;bottom:0;left:0;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;height:0.8rem;width:100%;line-height: 0.8rem;}
+			.g_pop1 .g_pop_bottom_l,.g_pop1 .g_pop_bottom_r{-webkit-box-flex:1;-webkit-flex:1;flex:1;text-align: center;}
+			.g_pop1 .g_pop_bottom_l{color:#007aff;border-right:1px solid #969ea6;}
+			.g_pop1 .g_pop_bottom_r{color:#007aff;}
+			.g_pop1 .g_pop_content_c{font-size:16px;height:1.96rem;color:#25323B;margin-left:2%;width:5rem;padding:0 0.15rem;display: table-cell;vertical-align: middle;text-align: center;}
+			.g_pop1 .g_pop_content_c>div{display: inline-block;}
+			.g_pop2 .g_pop_content{overflow:hidden;font-size:13px;padding-bottom:35px;border-radius:5px;width:265px;height:98px;background:#fff;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;}
+			.g_pop2 .g_pop_bottom{position:absolute;bottom:0;left:0;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display: flex;height:35px;line-height:35px;width:100%;}
+			.g_pop2 .g_pop_bottom_l,.g_pop2 .g_pop_bottom_r{-webkit-box-flex:1;-webkit-flex:1;flex:1;text-align: center;}
+			.g_pop2 .g_pop_bottom_l{color:#707878;background#F5F8F8;}
+			.g_pop2 .g_pop_bottom_r{color:#F7F8FC;background:#00AAE0;}
+			.g_pop2 .g_pop_content_c{color:#25323B;margin:0 auto;width:80%;height:98px;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display: flex;justify-content:center;align-items:center}
+			.g_pop_bottom_r a{width:100%;height:100%;display: block;color: #007aff;}
+
+
+			.index_box{width:100%;background:#6175ff;overflow-x: hidden;display: block;margin:0 auto;position: relative;height: 100%;}
+			._box{min-height:100%;position: relative;}
+			._box .bg{display:block;width: 100%;}
+			.index_box .write{width:85%;height: 100%;position: absolute;top: 0;left:0;right:0;margin: 0 auto;}
+			.index_box .write input{box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;font-size:0.24rem;width:100%;height:0.8rem;border: 2px solid #fae220;border-radius: 10px;padding-left: 0.28rem;margin-bottom: 0.3rem; }
+			.index_box .write>div input{width:60%;}
+			.index_box .write>div span{float:right;height:0.8rem;line-height: 0.8rem;width:1.6rem;font-size: 0.28rem;color:#57b1ea;padding:0 0.1rem;color:#403b14;border:1px solid #57b1ea;border-radius: 10px;text-align: center;background: linear-gradient(to bottom, #fbffaa, #fcde64);}
+			.index_box .write-top{width:100%;height: 63%; }
+			.index_box .register{width:100%;height:50px;display: block;margin-bottom:20px;font-size: 22px;line-height: 47px;text-align: center;font-weight: 600;color: #f48214;border-radius: 10px; background: linear-gradient(to bottom, #fbffaa, #fcde64);background: -webkit-linear-gradient(to bottom, #fbffaa, #fcde64);background: -moz-linear-gradient(to bottom, #fbffaa, #fcde64);}
+			.index_box .bottom_copyrigtht{width:100%;position: absolute;margin: 0 auto;bottom: 12px;}
+
+			.img_code_box{position:absolute;height:100%;width:100%;top:0;display: none;}
+			.code_cover{width:100%;height:100%;background: rgba(0,0,0,0.4);}
+			.img_code{padding:0.5rem;position:absolute;width:5rem;height:1.5rem;background: #fff;margin:auto;top:50%;left: 0;right: 0;border-radius: 10px;overflow: hidden;}
+			.img_code span{width:1.8rem;overflow: hidden;display: block;height:0.66rem;float: right;border:1px solid #fae220;border-radius: 5px;}
+			.img_code input{width:2.6rem;border:1px solid #fae220;line-height: 0.66rem;border-radius: 5px;padding-left: 0.3rem;}
+			.img_code img{width:100%;height:100%;}
+			.img_code .codebottom{font-size:0.28rem;position:absolute;bottom:0;left:0;right:0;height:0.8rem;line-height: 0.8rem;border-top: 1px solid #eee;text-align: center;}
+
+			.g_tips{width: 100%;text-align: center;font-size: 12px;color: #fff;margin-bottom: 20px;}
+			.g_tips span{display: block;line-height: 20px;overflow: hidden;}
+			.g_tips span a{font-size:12px;line-height:12px;margin:3px 0 15px 0;text-decoration: none;display: block;width: 25%;float: left;color: #fff;border-right: 1px solid #fff;box-sizing: border-box;}
+			.g_tips span a:last-child{border: none;}
+		</style>
+	</head>
+	<body>
+
+	<div class="index_box">
+		<div class="_box">
+			<img class="bg" src="/img/app/bg_index.jpg"/>
+			<div class="write">
+				<div class="write-top"></div>
+				<input id="input_telphone" type="tel" maxlength="11" name="phone" class="phone" placeholder="请输入您的手机号" />
+
+				<div class="clearfix code">
+					<input id="input_sms_code" type="tel" name="code" placeholder="请输入验证码" />
+					<label id="send_sms_code" for="img_code_inp" style="border:none;">
+						<span>获取验证码</span>
+					</label>
+				</div>
+
+				<span id="span_register" class="register">立即申请</span>
+
+				<p class="g_tips">
+						<span>版权所有：杭州舜泰网络科技有限公司</span>
+						<span>[浙ICP备17000903号]</span>
+				</p>
+			</div>
+
+			<div id="div_img_code_box" class="img_code_box">
+				<div class="code_cover"></div>
+				<div class="img_code">
+					<input type="tel" name="imgCode" id="img_code_inp" placeholder="请输入验证码" />
+					<span>
+						<img id="img_code_box_url" src="" />
+					</span>
+					<div id="div_img_code_submit" class="codebottom">确定</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+	<div id="div_tip" class="tip"><span></span></div>
+
+
+
+
+	<div id="pop_dialog" class="g_pop g_pop1" style="display: none;">
+		<div class="pop_cover"></div>
+		<div class="g_pop_content">
+			<div class="g_pop_content_c">
+				<div><p style="font-size:14px;font-weight:600;">已为您准备低息贷款产品,下载APP即可马上申请</p></div>
+			</div>
+			<div class="g_pop_bottom">
+				<div id="div_pop_ios" class="g_pop_bottom_l">IOS版下载</div>
+				<div id="div_pop_android" class="g_pop_bottom_r">安卓版下载</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<input id="source" type="text" hidden value="$!{source}">
+    <input id="invite-code" type="text" hidden value="$!{inviteCode}">
+
+
+	<script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js" ></script>
+	<script type="text/javascript" src="/js/app/yaoxin.js" ></script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f43f2de67cb7877896714737935e6bd6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	</body>
+</html>

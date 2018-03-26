@@ -1,0 +1,258 @@
+.coupon_page .background {
+    background: url(/img/coupon_bg.png) no-repeat center center;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    text-align: center
+}
+
+.coupon_page .package {
+    display: inline-block;
+    width: 73vw;
+    margin-left: -36.5vw;
+    height: 89.6vw;
+    position: absolute;
+    top: 23%;
+    background: url(/img/coupon_package.png) no-repeat center;
+    background-size: contain;
+
+    /*-----*/
+    /*animation:shake 0.1s;*/
+    /*animation-iteration-count:infinite;*/
+    /*transform-origin: center 70%*/
+
+}
+
+@keyframes shake
+{
+    0%   {
+        transform:rotate(0deg);
+        -ms-transform:rotate(0deg); /* IE 9 */
+        -moz-transform:rotate(0deg); /* Firefox */
+        -webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+        -o-transform:rotate(0deg); /* Opera */
+    }
+    11%  {
+        transform:rotate(12deg);
+        -ms-transform:rotate(12deg); /* IE 9 */
+        -moz-transform:rotate(12deg); /* Firefox */
+        -webkit-transform:rotate(12deg); /* Safari 和 Chrome */
+        -o-transform:rotate(12deg); /* Opera */
+    }
+    22%  {
+        transform:rotate(-12deg);
+        -ms-transform:rotate(-12deg); /* IE 9 */
+        -moz-transform:rotate(-12deg); /* Firefox */
+        -webkit-transform:rotate(-12deg); /* Safari 和 Chrome */
+        -o-transform:rotate(-12deg); /* Opera */
+    }
+    33% {
+        transform:rotate(0deg);
+        -ms-transform:rotate(0deg); /* IE 9 */
+        -moz-transform:rotate(0deg); /* Firefox */
+        -webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+        -o-transform:rotate(0deg); /* Opera */
+    }
+    44%  {
+        transform:rotate(12deg);
+        -ms-transform:rotate(12deg); /* IE 9 */
+        -moz-transform:rotate(12deg); /* Firefox */
+        -webkit-transform:rotate(12deg); /* Safari 和 Chrome */
+        -o-transform:rotate(12deg); /* Opera */
+    }
+    55%  {
+        transform:rotate(-12deg);
+        -ms-transform:rotate(-12deg); /* IE 9 */
+        -moz-transform:rotate(-12deg); /* Firefox */
+        -webkit-transform:rotate(-12deg); /* Safari 和 Chrome */
+        -o-transform:rotate(-12deg); /* Opera */
+    }
+    66% {
+        transform:rotate(0deg);
+        -ms-transform:rotate(0deg); /* IE 9 */
+        -moz-transform:rotate(0deg); /* Firefox */
+        -webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+        -o-transform:rotate(0deg); /* Opera */
+    }
+    /*25%  {*/
+        /*transform:rotate(12deg);*/
+        /*-ms-transform:rotate(12deg); !* IE 9 *!*/
+        /*-moz-transform:rotate(12deg); !* Firefox *!*/
+        /*-webkit-transform:rotate(12deg); !* Safari 和 Chrome *!*/
+        /*-o-transform:rotate(12deg); !* Opera *!*/
+    /*}*/
+    /*75%  {*/
+        /*transform:rotate(-12deg);*/
+        /*-ms-transform:rotate(-12deg); !* IE 9 *!*/
+        /*-moz-transform:rotate(-12deg); !* Firefox *!*/
+        /*-webkit-transform:rotate(-12deg); !* Safari 和 Chrome *!*/
+        /*-o-transform:rotate(-12deg); !* Opera *!*/
+    /*}*/
+    /*100% {*/
+        /*transform:rotate(0deg);*/
+        /*-ms-transform:rotate(0deg); !* IE 9 *!*/
+        /*-moz-transform:rotate(0deg); !* Firefox *!*/
+        /*-webkit-transform:rotate(0deg); !* Safari 和 Chrome *!*/
+        /*-o-transform:rotate(0deg); !* Opera *!*/
+    /*}*/
+}
+
+/*-----*/
+
+@media (min-width: 530px) {
+    .coupon_page .package {
+        width:300px;
+        margin-left: -150px;
+        height: 377px
+    }
+}
+
+.coupon_page .package img {
+    width: 100%
+}
+
+.coupon_page .package .top {
+    position: absolute;
+    width: 120%;
+    top: -33%;
+    left: -10%
+}
+
+.coupon_page .package p {
+    color: #FFD482;
+    font-size: 24px
+}
+
+.coupon_page .package p:first-of-type {
+    margin-top: 20%;
+    font-size: 18px
+}
+
+@media (max-width: 360px) {
+    .coupon_page .package p {
+        font-size:22px
+    }
+
+    .coupon_page .package p:first-of-type {
+        font-size: 16px;
+        margin-bottom: 8px
+    }
+}
+
+.coupon_page .package .circle_font {
+    position: absolute;
+    top: 60.5%;
+    left: 50.5%;
+    color: #E52600;
+    font-size: 40px;
+    width: 66px;
+    margin-left: -33px
+}
+
+@media (max-width: 350px) {
+    .coupon_page .package .circle_font {
+        font-size:34px
+    }
+}
+
+.coupon_page .package .circle_long {
+    font-size: 20px;
+    top: 64%
+}
+
+.coupon_page .open_btn,.coupon_page .view_btn {
+    position: absolute;
+    top: 80vh;
+    width: 54vw;
+    line-height: 60px;
+    margin-left: -27vw;
+    left: 50%;
+    color: #FFE88E;
+    font-size: 24px;
+    box-shadow: 0 0 10px 0 #F5632C;
+    border-radius: 10px;
+    background: -moz-linear-gradient(top,#FFC600 0%,#FF9400 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FFC600),color-stop(100%,#FF9400));
+    background: -webkit-linear-gradient(top,#FFC600 0%,#FF9400 100%);
+    background: -o-linear-gradient(top,#FFC600 0%,#FF9400 100%);
+    background: -ms-linear-gradient(top,#FFC600 0%,#FF9400 100%);
+    background: linear-gradient(to bottom,#FFC600 0%,#FF9400 100%)
+}
+
+@media (min-width: 530px) {
+    .coupon_page .open_btn,.coupon_page .view_btn {
+        width:180px;
+        margin-left: -90px;
+        height: 60px
+    }
+}
+
+.coupon_page .open_package {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 7%;
+    width: 100%;
+    height: 73%;
+    background: url(/img/coupon_open.png) no-repeat center;
+    background-size: contain
+}
+
+.coupon_page .open_package p {
+    color: #FFEBC5;
+    font-size: 18px
+}
+
+.coupon_page .open_package p:first-of-type {
+    color: #FFD482;
+    font-size: 14px;
+    margin: 38vh 0 5% 0
+}
+
+.coupon_page .open_package .cb_font {
+    position: absolute;
+    font-size: 44px;
+    color: #E52600;
+    width: 54vw;
+    margin-left: -27vw;
+    left: 51%;
+    top: 18%
+}
+
+.coupon_page .open_package .cb_font_long {
+    font-size: 34px;
+    top: 20%
+}
+
+.coupon_page .open_package .cb_font_mega {
+    font-size: 28px;
+    top: 20%
+}
+
+@media (min-width: 530px) {
+    .coupon_page .open_package {
+        width:418px;
+        margin-left: -210px;
+        left: 50%
+    }
+}
+
+.coupon_page .view_btn {
+    display: block;
+    display: none;
+    width: 56vw;
+    margin-left: -28vw;
+    font-size: 18px
+}
+
+.coupon_page .view_btn:hover,.coupon_page .view_btn:focus {
+    text-decoration: none
+}
+
+@media (min-width: 380px) {
+    .coupon_page .view_btn {
+        width:210px;
+        margin-left: -105px;
+        left: 50%
+    }
+}

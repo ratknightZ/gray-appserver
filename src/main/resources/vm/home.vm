@@ -1,0 +1,5 @@
+<html>
+This is home page of taotie-appserver-server !!($!{envMode})
+<br>
+Project Version: $!{projectVersion}
+</html>

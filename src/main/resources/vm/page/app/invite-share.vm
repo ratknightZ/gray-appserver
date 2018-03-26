@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    #parse("gv_config.vm")
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>邀请好友</title>
+    <link href="/css/app/wap-common-customized.css?css_version=${css_version}" rel="stylesheet">
+    <link href="/css/app/invite-share.css?css_version=${css_version}" rel="stylesheet">
+</head>
+<body>
+<div class="wap-container">
+    <div class="header"></div>
+    <div class="wap-body">
+        <div class="business-desc">
+            <div class="top-ad">
+                <div class="ad1"><span>没钱花怎么办？</span></div>
+                <div class="ad2"><span>就找简速贷</span></div>
+            </div>
+            <div class="business-icon-wrapper">
+                <img class="one-minute-check" src="/img/app/one-minute-check.png">
+                <img class="high-acceptment" src="/img/app/high-acceptment.png">
+                <img class="three-minutes-income" src="/img/app/three-minutes-income.png">
+            </div>
+        </div>
+        <div class="msg-tip">
+            <div class="credit-ceil-tip">
+                <span>最高可贷(元)</span>
+            </div>
+            <div class="credit-ceil-number">
+                <span>50000</span>
+            </div>
+            <div class="ad-info">
+                <span>通过率再翻倍，5万额度快至30分钟放款</span>
+            </div>
+        </div>
+        <div>
+            <input id="invite-code" type="text" hidden value="$!{inviteCode}">
+            <input id="source" type="text" hidden value="$!{source}">
+        </div>
+        <div class="cellphone-wrapper">
+            <input type="text" class="cellphone" value="" placeholder="请输入您的手机号">
+        </div>
+        <div class="sms-code-wrapper">
+            <input type="text" class="sms-code" value="" placeholder="请输入验证码">
+            <button type="button" data-url="/api/common/get_sms_code">获取验证码</button>
+        </div>
+        <div class="submit-wrapper">
+            <button type="button" class="submit-btn" data-url="/api/register">开始借钱</button>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/lib/jquery.min.js?js_version=${js_version}"></script>
+<script src="/js/app/invite-share.js?js_version=${js_version}"></script>
+</body>
+</html>

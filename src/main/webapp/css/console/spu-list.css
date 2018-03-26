@@ -1,0 +1,12 @@
+button.intab {
+    border: none;
+}
+
+.table > tbody > tr > td.vertical-middle {
+    vertical-align: middle;
+}
+
+.table > tbody > tr > td.vertical-middle img {
+    width: 100px;
+    height: 100px;
+}

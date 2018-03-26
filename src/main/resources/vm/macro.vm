@@ -1,0 +1,65 @@
+#macro(pager $currentPage, $pageCount, $pageRedirctUrl)
+	#set($prePreCurrentPage =$currentPage - 2)
+	#set($preCurrentPage =$currentPage - 1)
+	#set($afterCurrentPage =$currentPage + 1)
+	#set($afterAfterCurrentPage =$currentPage + 2)
+	#set($preLastPage =$pageCount - 1)
+<ul class="pagination pagination-sm no-margin pull-right">
+	#if($currentPage <= 1)
+        <li class="disabled"><a href="javascript:void(0);">上一页</a></li>
+	#else
+        <li><a href="#addUrlParam($pageRedirctUrl,'page', $preCurrentPage)">上一页</a></li>
+	#end
+	#if($pageCount <= 10)
+		#foreach($id in [1..$pageCount])
+            <li #if($currentPage == $id)class="active"#end><a href="#addUrlParam($pageRedirctUrl,'page', $id)">$id</a></li>
+		#end
+	#end
+	#if($pageCount > 10)
+        <li #if($currentPage == 1)class="active"#end><a href="#addUrlParam($pageRedirctUrl,'page', 1)">1</a></li>
+        <li #if($currentPage == 2)class="active"#end><a href="#addUrlParam($pageRedirctUrl,'page', 2)">2</a></li>
+		#if($currentPage > 5)
+            <li><a href="#">...</a></li>
+		#end
+		#if($currentPage > 4)
+            <li><a href="#addUrlParam($pageRedirctUrl,'page', $prePreCurrentPage)">$prePreCurrentPage</a></li>
+		#end
+		#if($currentPage > 3 && $preCurrentPage < $preLastPage)
+            <li><a href="#addUrlParam($pageRedirctUrl,'page', $preCurrentPage)">$preCurrentPage</a></li>
+		#end
+		#if($currentPage > 2 && $currentPage < $preLastPage)
+            <li class="active"><a href="#addUrlParam($pageRedirctUrl,'page', $currentPage)">$currentPage</a></li>
+		#end
+		#set($pcminus2 =$pageCount - 2)
+		#if($currentPage < $pcminus2 && $afterCurrentPage > 2)
+            <li><a href="#addUrlParam($pageRedirctUrl,'page', $afterCurrentPage)">$afterCurrentPage</a></li>
+		#end
+		#set($pcminus3 =$pageCount - 3)
+		#if($currentPage < $pcminus3)
+            <li><a href="#addUrlParam($pageRedirctUrl,'page', $afterAfterCurrentPage)">$afterAfterCurrentPage</a></li>
+		#end
+		#set($pcminus4 =$pageCount - 4)
+		#if($currentPage < $pcminus4)
+            <li><a href="#">...</a></li>
+		#end
+        <li #if($currentPage == $preLastPage)class="active"#end><a href="#addUrlParam($pageRedirctUrl,'page', $preLastPage)">$preLastPage</a></li>
+        <li #if($currentPage == $pageCount)class="active"#end><a href="#addUrlParam($pageRedirctUrl,'page', $pageCount)">$pageCount</a></li>
+	#end
+	#if($currentPage >= $pageCount)
+        <li class="disabled"><a href="javascript:void(0);">下一页</a></li>
+	#else
+        <li><a href="#addUrlParam($pageRedirctUrl,'page', $afterCurrentPage)">下一页</a></li>
+	#end
+</ul>
+#end
+
+#macro(addUrlParam $url, $paramName, $paramValue)
+	#if($!{url} && $!{paramName} && $!{paramValue})
+		#set($separator = "&")
+		#if($!{url.indexOf("?")} == -1)
+			#set($separator = "?")
+		#end
+		$url$separator$paramName=$!{paramValue}
+	#end
+#end
+

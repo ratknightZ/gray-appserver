@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	  <meta name="apple-mobile-web-app-capable" content="yes" />
+	  <meta name="format-detection" content="telephone=no" />
+		<!--强制清除缓存-->
+	  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<title>下载 - 简速贷</title>
+
+		<script>
+
+		</script>
+
+		<style type="text/css">
+			*{margin:0;padding: 0;}
+			html{margin:0;height:100%;}
+			body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+			body { height: 100%;background:#fff; color:#555; font-size:14px; font-family: Verdana, Arial, Helvetica, sans-serif; -webkit-text-size-adjust: 100%!important;}
+			td,th,caption { font-size:14px; }
+			h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+			address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+			a { color:#555; text-decoration:none; }
+			a:hover { text-decoration:underline; }
+			img { border:none; }
+			ol,ul,li { list-style:none; }
+			input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+			table { border-collapse:collapse; }
+			html {overflow-y: scroll;}
+			/* css common */
+			.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+			.clearfix { *zoom:1; }
+			*{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+			select{appearance:none;-moz-appearance:none;-webkit-appearance:none;border:none;outline: none;background:transparent;}
+			input{outline: none;border:none;background:#fff;margin:0;padding: 0;}
+			a, button, input, textarea {
+			    outline: none;
+			}
+			select, input, a {
+			    -webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+      .index_box{width:100%; max-width: 450px;background:#fff;overflow-x: hidden;display: block;margin:0 auto;position: relative;height: 100%;}
+      .index_box .top{background}
+      .index_box .bg{display:block; width: 100%;}
+      .index_box .text{display:block; width: 60%;margin:0 auto;}
+			.index_box a{}
+      .index_box .download{width:250px; height:50px;display: block;margin:15px auto;font-size: 22px;line-height: 47px;text-align: center;font-weight: 200;color: #fff;border-radius: 10px; background-image: -moz-linear-gradient( 90deg, rgb(69,158,248) 0%, rgb(126,190,255) 100%);background-image: -webkit-linear-gradient( 90deg, rgb(69,158,248) 0%, rgb(126,190,255) 100%);background-image: -ms-linear-gradient( 90deg, rgb(69,158,248) 0%, rgb(126,190,255) 100%);}
+      .index_box .liucheng{width:86%; background-color: rgb(255, 255, 255);margin:10px 0 50px;padding: 10px;position: absolute;left:4.5%;}
+      .box-shadow {box-shadow: 0px 3px 10px 0px rgba(6, 0, 1, 0.35);-moz-box-shadow: 0px 3px 10px 0px rgba(6, 0, 1, 0.35);-webkit-box-shadow: 0px 3px 10px 0px rgba(6, 0, 1, 0.35);}
+      .index_box .liucheng img{width:40%; border: 1px solid #64affc;}
+      .index_box .liucheng .left{float: left;}
+      .index_box .liucheng .right{float: right;}
+
+			.wechat_tips{display: none;width:100%; height: 100%;position: absolute; top: 0;background:rgba(0, 0, 0, 0.7);z-index: 10000;}
+			.wechat_tips img{width:100%; }
+    </style>
+	</head>
+	<body>
+
+    <div class="index_box">
+      <img class="bg" src="/img/app/bg_d_top.jpg"/>
+      <span class="text">简速贷，为您筛选优质、快捷的借款平台， 借钱就是这么简单、便捷！快至1小时放款， 解决您的燃眉之急～</span>
+      <a href="javascript:clickDownload();"><span id="span_register" class="download">点击下载</span></a>
+      <div class="liucheng box-shadow">
+        <img src="/img/app/lc_1.jpg" class="left"/>
+        <img src="/img/app/lc_2.jpg" class="right"/>
+      </div>
+
+			<div id="wechat_tips" class="wechat_tips">
+				<img src="/img/app/weixin_over.png"/>
+			</div>
+    </div>
+
+		<script type="text/javascript">
+			var ios_url = "https://itunes.apple.com/cn/app/id1332558607";
+			var android_url = "/apk/com.borrow.anytime.apk";
+
+			function clickDownload(){
+				var ua = navigator.userAgent.toLowerCase();
+				if(/iphone|ipad|ipod/.test(ua)) {
+					window.location.href=ios_url;
+				}else if(/android/.test(ua)) {
+					if(ua.match(/MicroMessenger/i)=="micromessenger"){
+						//显示那个蒙层
+						document.getElementById("wechat_tips").style.display="block";
+						window.location.href=android_url;
+					} else {
+						window.location.href=android_url;
+					}
+				}else{
+					window.location.href=android_url;
+				}
+			}
+			//iOS下面直接跳转到AppStore上
+			var ua = navigator.userAgent.toLowerCase();
+			if(/iphone|ipad|ipod/.test(ua)) {
+				window.location.href=ios_url;
+				document.getElementById("span_register").innerHTML="AppStore下载";
+			}else{
+				window.location.href=android_url;
+			}
+		</script>
+		<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f43f2de67cb7877896714737935e6bd6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	</body>
+</html>

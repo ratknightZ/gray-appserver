@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    #parse("gv_config.vm")
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>更改用户权限</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/css/lib/bootstrap.min.css?css_version=${css_version}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css?css_version=${css_version}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/css/lib/ionicons.min.css?css_version=${css_version}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/css/lib/AdminLTE.min.css?css_version=${css_version}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/css/lib/_all-skins.min.css?css_version=${css_version}">
+    <link rel="stylesheet" href="/css/console/add-room.css?css_version=${css_version}">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Font -->
+##  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!--页头-->
+    #parse("page/console/header.vm")
+
+    <!-- 左边栏 -->
+    #parse("page/console/sidebar.vm")
+
+    <!-- 内容区域 -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                更改用户权限
+                <small>用户管理</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="#">用户管理</a></li>
+                <li class="active">更改用户权限</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <!-- right column -->
+                <div class="col-md-12">
+                    <!-- Horizontal Form -->
+                    <div class="box box-info">
+                        <!--<div class="box-header with-border">-->
+                        <!--<h3 class="box-title">Horizontal Form</h3>-->
+                        <!--</div>-->
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form id="update-user-role-auth-form" class="form-horizontal" action="/user/update_user_role_auth"
+                              method="post">
+                            <input type="hidden" name="userId" value="${userId}">
+                            <div class="box-body">
+                                #if($nick and $nick != "")
+                                    <div class="form-group">
+                                        <label for="nick" class="col-sm-2 control-label">用户昵称</label>
+
+                                        <div class="col-sm-8">
+                                            <input id="nick" type="text" class="form-control" name="nick"
+                                                   value="${nick}" readonly>
+                                        </div>
+                                    </div>
+                                #end
+                                #if($avatar and $avatar != "")
+                                    <div class="form-group">
+                                        <label for="avatar" class="col-sm-2 control-label">用户头像</label>
+
+                                        <div class="col-sm-8">
+                                            <input id="avatar" type="text" class="form-control" name="avatar"
+                                                   value="${avatar}" readonly>
+                                        </div>
+                                    </div>
+                                #end
+                                #if($email and $email != "")
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">用户邮箱</label>
+
+                                        <div class="col-sm-8">
+                                            <input id="email" type="text" class="form-control" name="email"
+                                                   value="${email}" readonly>
+                                        </div>
+                                    </div>
+                                #end
+                                #if($cellphone and $cellphone != "")
+                                    <div class="form-group">
+                                        <label for="cellphone" class="col-sm-2 control-label">手机号</label>
+
+                                        <div class="col-sm-8">
+                                            <input id="cellphone" type="text" class="form-control" name="cellphone"
+                                                   value="${cellphone}" readonly>
+                                        </div>
+                                    </div>
+                                #end
+                                #if($wechatOpenId and $wechatOpenId != "")
+                                <div class="form-group">
+                                    <label for="wechat-open-id" class="col-sm-2 control-label">微信openId</label>
+
+                                    <div class="col-sm-8">
+                                        <input id="wechat-open-id" type="text" class="form-control"
+                                               name="wechatOpenId" value="${wechatOpenId}" readonly>
+                                    </div>
+                                </div>
+                                #end
+##                                <div class="form-group">
+##                                    <label for="video-stream-side" class="col-sm-2 control-label">侧面摄像头视频流地址</label>
+##
+##                                    <div class="col-sm-8">
+##                                        <input id="video-stream-front" type="text" class="form-control"
+##                                               name="videoStreamSide" value="">
+##                                    </div>
+##                                </div>
+                                <div class="form-group">
+                                    <label for="role-auth" class="col-sm-2 control-label">用户角色</label>
+
+                                    <div class="col-sm-8">
+                                        <select id="role-auth" class="form-control" name="roleAuth">
+                                            <option value="ROLE_USER"
+                                                #if($roleAuth == "ROLE_USER") selected="true"
+                                                #end>普通用户
+                                            </option>
+                                            <option value="ROLE_PRODUCT"
+                                                #if($roleAuth == "ROLE_PRODUCT") selected="true"
+                                                #end>商家
+                                            </option>
+                                            <option value="ROLE_ADMIN"
+                                                #if($roleAuth == "ROLE_ADMIN") selected="true"
+                                                #end>管理员
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+##                                <div class="form-group">
+##                                    <label for="play-fee" class="col-sm-2 control-label">游玩单价</label>
+##
+##                                    <div class="col-sm-8">
+##                                        <input id="play-fee" type="text" class="form-control" value="" name="playFee">
+##                                    </div>
+##                                </div>
+                            ##                <div class="form-group">
+                            ##                  <label for="is-online" class="col-sm-2 control-label">在线状态</label>
+                            ##
+                            ##                  <div class="col-sm-8">
+                            ##                    <select id="is-online" class="form-control">
+                            ##                      <option value="0">在线</option>
+                            ##                      <option value="1">离线</option>
+                            ##                    </select>
+                            ##                  </div>
+                            ##                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-primary update-user-role-auth">提交</button>
+                            </div>
+                            <!-- /.box-footer -->
+                        </form>
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
+    </div>
+
+    <!--页脚-->
+    #parse("page/console/footer.vm")
+
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!--公共脚本-->
+    #parse("page/console/common-script.vm")
+<script src="/js/lib/jquery.form.js?js_version=${js_version}"></script>
+<script src="/js/console/update-user-role-auth.js?js_version=${js_version}"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="${loginUser.avatar}" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>${loginUser.nick}</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+            </div>
+        </div>
+        <!-- search form -->
+        <!--<form action="#" method="get" class="sidebar-form">-->
+        <!--<div class="input-group">-->
+        <!--<input type="text" name="q" class="form-control" placeholder="Search...">-->
+        <!--<span class="input-group-btn">-->
+        <!--<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>-->
+        <!--</button>-->
+        <!--</span>-->
+        <!--</div>-->
+        <!--</form>-->
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">导航菜单</li>
+            <!--<li class="treeview">-->
+            <!--<a href="#">-->
+            <!--<i class="fa fa-dashboard"></i> <span>Dashboard</span>-->
+            <!--<span class="pull-right-container">-->
+            <!--<i class="fa fa-angle-left pull-right"></i>-->
+            <!--</span>-->
+            <!--</a>-->
+            <!--<ul class="treeview-menu">-->
+            <!--<li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>-->
+            <!--<li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
+            <!--</ul>-->
+            <!--</li>-->
+            <li class="treeview #if($!{treeviewName}=="terrace")active#end">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>平台管理</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li #if($!{treeviewMenuName}=="terraceList")class="active"#end><a href="/terrace/list_page"><i class="fa fa-circle-o"></i> 平台列表</a></li>
+                    <li #if($!{treeviewMenuName}=="addTerrace")class="active"#end><a href="/terrace/add_page"><i class="fa fa-circle-o"></i> 添加平台</a></li>
+                </ul>
+            </li>
+            <li class="treeview #if($!{treeviewName}=="banner")active#end">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>轮播图管理</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li #if($!{treeviewMenuName}=="bannerList")class="active"#end><a href="/banner/list_page"><i class="fa fa-circle-o"></i> 轮播图列表</a></li>
+                    <li #if($!{treeviewMenuName}=="addBanner")class="active"#end><a href="/banner/add_page"><i class="fa fa-circle-o"></i> 添加轮播图</a></li>
+                </ul>
+            </li>
+            <li class="treeview #if($!{treeviewName}=="lendInfo")active#end">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>借贷信息</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li #if($!{treeviewMenuName}=="lendInfoList")class="active"#end><a href="/lend_info/list_page"><i class="fa fa-circle-o"></i> 借贷信息列表</a></li>
+                </ul>
+            </li>
+            <li class="treeview #if($!{treeviewName}=="user")active#end">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>用户管理</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li #if($!{treeviewMenuName}=="userList")class="active"#end><a href="/user/list_page"><i class="fa fa-circle-o"></i> 用户列表</a></li>
+                </ul>
+            </li>
+            <li class="treeview #if($!{treeviewName}=="statistics")active#end">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>数据统计</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li #if($!{treeviewMenuName}=="statisticsList")class="active"#end><a href="/statistics/list_page"><i class="fa fa-circle-o"></i> 推广数据</a></li>
+                </ul>
+            </li>
+            <li class="treeview #if($!{treeviewName}=="appPush")active#end">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>APP推送</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li #if($!{treeviewMenuName}=="push")class="active"#end><a href="/app_push/push_page"><i class="fa fa-circle-o"></i>推送</a></li>
+                </ul>
+            </li>
+            <li class="treeview #if($!{treeviewName}=="hotLend")active#end">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>热门借贷</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li #if($!{treeviewMenuName}=="updateHotLend")class="active"#end><a href="/hot_lend/update_page"><i class="fa fa-circle-o"></i> 更改地址</a></li>
+                </ul>
+            </li>
+            <li class="treeview #if($!{treeviewName}=="opinion")active#end">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>用户反馈</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li #if($!{treeviewMenuName}=="opinonList")class="active"#end><a href="/opinion/list_page"><i class="fa fa-circle-o"></i> 反馈列表</a></li>
+                </ul>
+            </li>
+##            <li class="treeview #if($!{treeviewName}=="room")active#end">
+##                <a href="#">
+##                    <i class="fa fa-edit"></i> <span>娃娃机管理</span>
+##                    <span class="pull-right-container">
+##              <i class="fa fa-angle-left pull-right"></i>
+##            </span>
+##                </a>
+##                <ul class="treeview-menu">
+##                    <li #if($!{treeviewMenuName}=="roomList")class="active"#end><a href="/room/list_page"><i class="fa fa-circle-o"></i> 娃娃机列表</a></li>
+##                    <li #if($!{treeviewMenuName}=="addRoom")class="active"#end><a href="/room/add_room_page"><i class="fa fa-circle-o"></i> 添加娃娃机</a></li>
+##                </ul>
+##            </li>
+##            <li class="treeview #if($!{treeviewName}=="shipment")active#end">
+##                <a href="#">
+##                    <i class="fa fa-edit"></i> <span>物流订单管理</span>
+##                    <span class="pull-right-container">
+##              <i class="fa fa-angle-left pull-right"></i>
+##            </span>
+##                </a>
+##                <ul class="treeview-menu">
+##                    <li #if($!{treeviewMenuName}=="shipmentOrderList")class="active"#end><a href="/shipment/order_list_page"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+####                    <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> 订单详情</a></li>
+##                </ul>
+##            </li>
+##            <li class="treeview">
+##                <a href="#">
+##                    <i class="fa fa-edit"></i> <span>在线客服</span>
+##                    <span class="pull-right-container">
+##              <i class="fa fa-angle-left pull-right"></i>
+##            </span>
+##                </a>
+##                <ul class="treeview-menu">
+##                    <li><a href="/im/index"><i class="fa fa-circle-o"></i> 客服网页版</a></li>
+##                </ul>
+##            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+    #parse("gv_config.vm")
+    #set($treeviewName="terrace")
+    #set($treeviewMenuName="addTerrace")
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>添加平台</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/css/lib/bootstrap.min.css?css_version=${css_version}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css?css_version=${css_version}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/css/lib/ionicons.min.css?css_version=${css_version}">
+    <link rel="stylesheet" href="/css/lib/select2.min.css?css_version=${css_version}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/css/lib/AdminLTE.min.css?css_version=${css_version}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/css/lib/_all-skins.min.css?css_version=${css_version}">
+    <link rel="stylesheet" href="/css/console/add-terrace.css?css_version   =${css_version}">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Font -->
+##    <link rel="stylesheet" href="/css/lib/google-font-css.css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!--页头-->
+    #parse("page/console/header.vm")
+
+    <!-- 左边栏 -->
+    #parse("page/console/sidebar.vm")
+
+    <!-- 内容区域 -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                添加平台
+                <small>平台管理</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="#">平台管理</a></li>
+                <li class="active">添加平台</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <!-- right column -->
+                <div class="col-md-12">
+                    <!-- Horizontal Form -->
+                    <div class="box box-info">
+                        <!--<div class="box-header with-border">-->
+                        <!--<h3 class="box-title">Horizontal Form</h3>-->
+                        <!--</div>-->
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form id="add-terrace-form" class="form-horizontal" action="/terrace/add" method="post"
+                              enctype="multipart/form-data">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="terrace-name" class="col-sm-2 control-label">平台名称</label>
+                                    <div class="col-sm-8">
+                                        <input id="terrace-name" type="text" class="form-control" name="terraceName"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rate" class="col-sm-2 control-label">参考利率</label>
+                                    <div class="col-sm-8">
+                                        <input id="rate" type="text" class="form-control" name="rate" value="">
+                                        <select id="unit-of-rate" class="form-control" name="unitOfRate">
+                                            <option value="0" >%/月</option>
+                                            <option value="1" >%/天</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quickest-time" class="col-sm-2 control-label">最快放贷时间</label>
+                                    <div class="col-sm-8">
+                                        <input id="quickest-time" type="text" class="form-control" name="quickestTime"
+                                               value="">
+                                        <select id="unit-of-quickest-time" class="form-control" name="unitOfQuickestTime">
+                                            <option value="0" >分</option>
+                                            <option value="1" >秒</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="min-amount" class="col-sm-2 control-label">最小额度(元)</label>
+                                    <div class="col-sm-8">
+                                        <input id="min-amount" type="text" class="form-control" name="minAmount"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="max-amount" class="col-sm-2 control-label">最大额度(元)</label>
+                                    <div class="col-sm-8">
+                                        <input id="max-amount" type="text" class="form-control" name="maxAmount"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="min-repayment-time-limit" class="col-sm-2 control-label">最小还款期限(天)</label>
+                                    <div class="col-sm-8">
+                                        <input id="min-repayment-time-limit" type="text" class="form-control" name="minRepaymentTimeLimit"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="max-repayment-time-limit" class="col-sm-2 control-label">最大还款期限(天)</label>
+                                    <div class="col-sm-8">
+                                        <input id="max-repayment-time-limit" type="text" class="form-control" name="maxRepaymentTimeLimit"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="choosable-repayment-time-limit" class="col-sm-2 control-label">可选择还款期限(天)</label>
+                                    <div class="col-sm-8">
+                                        <input id="choosable-repayment-time-limit" type="text" class="form-control" name="choosableRepaymentTimeLimit"
+                                               value="" placeholder="多个以英文逗号分隔">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="unit-of-repayment-time" class="col-sm-2 control-label">显示时还款期限单位选择</label>
+
+                                    <div class="col-sm-8">
+                                        <select id="unit-of-repayment-time" class="form-control" name="unitOfRepaymentTime">
+                                            <option value="0">天</option>
+                                            <option value="1">月</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="success-rate" class="col-sm-2 control-label">成功率星数(1-5)</label>
+                                    <div class="col-sm-8">
+                                        <input id="success-rate" type="text" class="form-control" name="successRate"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="url" class="col-sm-2 control-label">平台H5地址</label>
+                                    <div class="col-sm-8">
+                                        <input id="url" type="text" class="form-control" name="url"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apply-for-condition" class="col-sm-2 control-label">申请条件</label>
+                                    <div class="col-sm-8">
+                                        <input id="apply-for-condition" type="text" class="form-control" name="applyForCondition"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="need-information" class="col-sm-2 control-label">所需材料</label>
+                                    <div class="col-sm-8">
+                                        <input id="need-information" type="text" class="form-control" name="needInformation"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lend-type" class="col-sm-2 control-label">借贷类型</label>
+
+                                    <div class="col-sm-8">
+                                        <select id="lend-type" class="form-control" name="lendType">
+                                            <option value="1">现金贷</option>
+                                            <option value="2">信用贷</option>
+                                            <option value="3">大额贷</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="have-credit-card" class="col-sm-2 control-label">有无信用卡</label>
+
+                                    <div class="col-sm-8">
+                                        <select id="have-credit-card" class="form-control" name="haveCreditCard">
+                                            <option value="1">有</option>
+                                            <option value="2">无</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="repayment-way" class="col-sm-2 control-label">还款方式</label>
+
+                                    <div class="col-sm-8">
+                                        <select id="repayment-way" class="form-control" name="repaymentWay">
+                                            <option value="1">分期还款</option>
+                                            <option value="2">到期还款</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="is-hot" class="col-sm-2 control-label">是否热点</label>
+
+                                    <div class="col-sm-8">
+                                        <select id="is-hot" class="form-control" name="isHot">
+                                            <option value="1">否</option>
+                                            <option value="2">是</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="status" class="col-sm-2 control-label">状态</label>
+
+                                    <div class="col-sm-8">
+                                        <select id="status" class="form-control" name="status">
+                                            <option value="1">下线</option>
+                                            <option value="2" selected>上线</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profession" class="col-sm-2 control-label">职业身份</label>
+                                    <div class="col-sm-8">
+                                        <select id="profession" class="form-control select2 profession" name="profession" multiple="multiple" data-placeholder="Select a State"
+                                            style="width: 100%;">
+                                        <option value="上班族">上班族</option>
+                                        <option value="个体户">个体户</option>
+                                        <option value="企业主">企业主</option>
+                                        <option value="学生">学生</option>
+                                        <option value="自由职业">自由职业</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="credit" class="col-sm-2 control-label">信用情况</label>
+                                    <div class="col-sm-8">
+                                        <select id="credit" class="form-control select2 credit" name="credit" multiple="multiple" data-placeholder="Select a State"
+                                                style="width: 100%;">
+                                            <option value="无逾期">无逾期</option>
+                                            <option value="1年内逾期少于3次">1年内逾期少于3次</option>
+                                            <option value="1年内逾期超过3次">1年内逾期超过3次</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lend-purpose" class="col-sm-2 control-label">借款用途</label>
+                                    <div class="col-sm-8">
+                                        <select id="lend-purpose" class="form-control select2 lend-purpose" name="lendPurpose" multiple="multiple" data-placeholder="Select a State"
+                                                style="width: 100%;">
+                                            <option value="旅游消费">旅游消费</option>
+                                            <option value="助学进修">助学进修</option>
+                                            <option value="购车消费">购车消费</option>
+                                            <option value="婚庆服务">婚庆服务</option>
+                                            <option value="医疗服务">医疗服务</option>
+                                            <option value="装修建材">装修建材</option>
+                                            <option value="百货消费">百货消费</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="terrace-type" class="col-sm-2 control-label">平台类型</label>
+                                    <div class="col-sm-8">
+                                        <select id="terrace-type" class="form-control select2 credit" name="terraceType" multiple="multiple" data-placeholder="Select a State"
+                                                style="width: 100%;">
+                                            <option value="1">综合排序</option>
+                                            <option value="2">小额贷</option>
+                                            <option value="3">大额贷</option>
+                                            <option value="4">新口子</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="show-channel" class="col-sm-2 control-label">显示渠道</label>
+                                    <div class="col-sm-8">
+                                        <select id="show-channel" class="form-control select2 credit" name="showChannel" multiple="multiple" data-placeholder="Select a State"
+                                                style="width: 100%;">
+                                            <option value="1">android</option>
+                                            <option value="2">ios</option>
+                                            <option value="3">h5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sort-code" class="col-sm-2 control-label">排序编号</label>
+                                    <div class="col-sm-8">
+                                        <input id="sort-code" type="text" class="form-control" name="sortCode"
+                                               value="" placeholder="数字越大越靠前">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="logo-input" class="col-sm-2 control-label">图标</label>
+                                    <div class="col-sm-10">
+                                        <div id="logo-preview-div">
+                                            <img id="logo-preview-img" border="0" src="/img/console/default-spu.png"
+                                                 width="100" height="100" onclick="$('#logo-input').click();">
+                                        </div>
+                                        <input id="logo-input" name="logoFile" type="file"
+                                               onchange="previewImage(this, 'logo-preview-div', 'logo-preview-img', 'logo-input')"
+                                               style="display: none;"/>
+                                        <p class="col-sm-2 help-block">请选择小于1M的图片.</p>
+                                        <input id="logo-url-input" name="logo" type="hidden" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-title" class="col-sm-2 control-label">消息标题</label>
+                                    <div class="col-sm-8">
+                                        <input id="message-title" type="text" class="form-control" name="messageTitle"
+                                               value="" placeholder="如不发送消息则无需填写">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-primary add-terrace">提交</button>
+                            </div>
+                            <!-- /.box-footer -->
+                        </form>
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
+    </div>
+
+    <!--页脚-->
+    #parse("page/console/footer.vm")
+
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="/js/lib/jquery.min.js?js_version=${js_version}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/js/lib/bootstrap.min.js?js_version=${js_version}"></script>
+<script src="/js/lib/select2.full.min.js?js_version=${js_version}"></script>
+<!-- FastClick -->
+<script src="/js/lib/fastclick.js?js_version=${js_version}"></script>
+<!-- AdminLTE App -->
+<script src="/js/lib/adminlte.min.js?js_version=${js_version}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/js/lib/demo.js?js_version=${js_version}"></script>
+<script src="/js/lib/jquery.form.js?js_version=${js_version}"></script>
+<script src="/js/lib/file-upload-preview.js?js_version=${js_version}"></script>
+<script src="/js/console/add-terrace.js?js_version=${js_version}"></script>
+<!-- Page script -->
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+    })
+</script>
+</body>
+</html>

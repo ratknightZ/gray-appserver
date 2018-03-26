@@ -1,0 +1,14 @@
+<!-- jQuery 3 -->
+<script src="/js/lib/jquery.min.js?js_version=${js_version}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/js/lib/bootstrap.min.js?js_version=${js_version}"></script>
+<!-- Slimscroll -->
+<script src="/js/lib/jquery.slimscroll.min.js?js_version=${js_version}"></script>
+<!-- FastClick -->
+<script src="/js/lib/fastclick.js?js_version=${js_version}"></script>
+<!-- AdminLTE App -->
+<script src="/js/lib/adminlte.min.js?js_version=${js_version}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/js/lib/demo.js?js_version=${js_version}"></script>
+<!-- 全局自定义脚本  -->
+<script src="/js/console/common-customized.js?js_version=${js_version}"></script>
