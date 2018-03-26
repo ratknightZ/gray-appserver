@@ -61,7 +61,7 @@ public class ActivityApiController {
     public String submitInvateCode(@RequestParam int userId,@RequestParam String invateCode){
         JsonVO json = new JsonVO();
         if (userId <= 0 ){
-            json.setMsg("请求错误");
+            json.setMsg("请求错 误");
             json.setMsgForDebug("非法的请求参数: [userId: " + userId + "]");
             json.setIsSuccess(0);
             return json.toString();
